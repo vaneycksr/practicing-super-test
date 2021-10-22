@@ -1,0 +1,21 @@
+{
+  "name": "practicing-super-test",
+  "version": "1.0.0",
+  "description": "Learn more about SuperTest",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaneycksr/practicing-super-test.git"
+  },
+  "author": "Van Eyck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vaneycksr/practicing-super-test/issues"
+  },
+  "homepage": "https://github.com/vaneycksr/practicing-super-test#readme",
+  "dependencies": {
+    "mocha": "^9.1.3"
+  }
+}
