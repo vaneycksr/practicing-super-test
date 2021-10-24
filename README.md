@@ -3,7 +3,7 @@ Learn more about SuperTest
 
 ### Pré-requisito
 
-    - *Ter o node e npm devidamente instalado*
+   - *Ter o node e npm devidamente instalados*
 
 ### Na pasta raiz, criar o package.json
 
