@@ -1,3 +1,5 @@
+[![Badge ServeRest](https://img.shields.io/badge/API-ServeRest-green)](https://github.com/ServeRest/ServeRest/)
+
 # practicing-super-test
 Learn more about SuperTest
 
@@ -18,3 +20,9 @@ Learn more about SuperTest
 ```
 
 > Criar arquivo '.mocharc.js' e definir o que será executado
+
+### Instalando o SuperTest para realizar requisições e o chai para realizar algumas validações
+
+```shell
+	$ npm install supertest chai
+```
