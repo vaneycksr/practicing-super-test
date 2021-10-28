@@ -6,6 +6,7 @@ Learn more about SuperTest
 ### Pré-requisito
 
    - *Ter o node e npm devidamente instalados*
+   - *Subir localmente o [ServeRest](https://github.com/ServeRest/ServeRest/)*
 
 ### Na pasta raiz, criar o package.json
 
