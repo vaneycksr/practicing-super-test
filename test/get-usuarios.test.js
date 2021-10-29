@@ -8,22 +8,36 @@ const request = supertest('http://localhost:3000');
 const rotaUsuarios = '/usuarios';
 
 describe('Validar verbo GET no endpoint ' + rotaUsuarios, () =>{
-    it('Retorno com sucesso ao utilizar query string', async () =>{
+    it.only('Retorno com sucesso ao utilizar query string', async () =>{
+
+        const usuario = {
+            nome: 'ttttt',
+            email: 'tttt@eeeee.com',
+            password: 'teste',
+            administrador: 'true',
+        }
+
+        // cadastra usuário
+        const responseUser = await request.post(rotaUsuarios).send({
+            usuario
+        }).expect(201)
+        
 
         // utilizando query string                                                     // validacao de status code do proprio supertest
-        const response = await request.get(rotaUsuarios).query({_id:'0uxuPY0cbmQhpEz1'}).expect(200);
+        const response = await request.get(rotaUsuarios).query({_id: responseUser.body._id}).expect(200);
 
-        // validacao
+        
+        // valida query string de usuario recem cadastrado
         expect(response.body).to.deep.equal(
             {
                 quantidade: 1,
                 usuarios: [
                     {
-                        nome: "Fulano da Silva",
-                        email: "fulano@qa.com",
-                        password: "teste",
-                        administrador: "true",
-                        _id: "0uxuPY0cbmQhpEz1"
+                        nome: usuario.nome,
+                        email: usuario.email,
+                        password: usuario.password,
+                        administrador: usuario.administrador,
+                        _id: responseUser.body._id
                     }
                 ]
             }
