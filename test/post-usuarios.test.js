@@ -42,6 +42,29 @@ describe('Validar verbo POST no endpoint ' + rotaUsuarios, () =>{
         );  
     })
 
+    it('Cadastrar usuário com e-mail já utilizado', async () =>{
+
+        const user = {
+            nome: 'ttttt',
+            email: 'asdf@teste.com',
+            password: 'teste',
+            administrador: 'true',
+        }
+
+        // cadastra primeiro usuário
+        const responseFirstUser = await request.post(rotaUsuarios).send(user).expect(201);
+
+        // outro usuário com o mesmo e-mail
+        const responseSecondtUser = await request.post(rotaUsuarios).send(
+            user
+        ).expect(400);
+
+        expect(responseSecondtUser.body).to.deep.equal({
+            message: "Este email já está sendo usado"
+        });
+
+    })
+
     
 
 })

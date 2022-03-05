@@ -8,7 +8,7 @@ const request = supertest('http://localhost:3000');
 const rotaUsuarios = '/usuarios';
 
 describe('Validar verbo GET no endpoint ' + rotaUsuarios, () =>{
-    it.only('Retorno com sucesso ao utilizar query string', async () =>{
+    it('Retorno com sucesso ao utilizar query string', async () =>{
 
         const usuario = {
             nome: 'ttttt',
@@ -18,9 +18,9 @@ describe('Validar verbo GET no endpoint ' + rotaUsuarios, () =>{
         }
 
         // cadastra usuário
-        const responseUser = await request.post(rotaUsuarios).send({
+        const responseUser = await request.post(rotaUsuarios).send(
             usuario
-        }).expect(201)
+        ).expect(201)
         
 
         // utilizando query string                                                     // validacao de status code do proprio supertest
