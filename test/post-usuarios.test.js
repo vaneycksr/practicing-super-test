@@ -1,5 +1,6 @@
 const { expect } = require('chai');
 const chai = require('chai');
+const { faker } = require('@faker-js/faker');
 const supertest = require('supertest');
 
 // caminho padrao
@@ -11,10 +12,10 @@ describe('Validar verbo POST no endpoint ' + rotaUsuarios, () =>{
     it('Cadastro com sucesso de novo usuário', async () =>{
         
         const response = await request.post(rotaUsuarios).send({
-            nome: "qqqk",
-            email: "qq@qa.com",
-            password: "teste",
-            administrador: "true",
+            nome: `${faker.name.firstName()} ${faker.name.lastName()}`,
+            email: faker.internet.email(),
+            password: faker.internet.password(),
+            administrador: `${faker.random.boolean()}`,
         }).expect(201)
 
         expect(response.body).to.deep.equal(
@@ -42,13 +43,13 @@ describe('Validar verbo POST no endpoint ' + rotaUsuarios, () =>{
         );  
     })
 
-    it('Cadastrar usuário com e-mail já utilizado', async () =>{
+    it.only('Cadastrar usuário com e-mail já utilizado', async () =>{
 
         const user = {
-            nome: 'ttttt',
-            email: 'asdf@teste.com',
-            password: 'teste',
-            administrador: 'true',
+            nome: `${faker.name.firstName()} ${faker.name.lastName()}`,
+            email: faker.internet.email(),
+            password: faker.internet.password(),
+            administrador: `${faker.random.boolean()}`,
         }
 
         // cadastra primeiro usuário

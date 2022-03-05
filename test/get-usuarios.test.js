@@ -1,5 +1,6 @@
 const { expect } = require('chai');
 const chai = require('chai');
+const { faker } = require('@faker-js/faker');
 const supertest = require('supertest');
 
 // caminho padrao
@@ -11,10 +12,10 @@ describe('Validar verbo GET no endpoint ' + rotaUsuarios, () =>{
     it('Retorno com sucesso ao utilizar query string', async () =>{
 
         const usuario = {
-            nome: 'ttttt',
-            email: 'tttt@eeeee.com',
-            password: 'teste',
-            administrador: 'true',
+            nome: `${faker.name.firstName()} ${faker.name.lastName()}`,
+            email: faker.internet.email(),
+            password: faker.internet.password(),
+            administrador: `${faker.random.boolean()}`,
         }
 
         // cadastra usuário

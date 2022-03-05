@@ -27,3 +27,9 @@ Learn more about SuperTest
 ```shell
 	$ npm install supertest chai
 ```
+
+### Instalando a biblioteca faker para gerar dados aleatórios
+
+```shell
+	$ npm install @faker-js/faker --save-dev
+```
