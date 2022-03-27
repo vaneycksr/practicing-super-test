@@ -15,7 +15,7 @@ describe('Validar verbo GET no endpoint ' + rotaUsuarios, () =>{
             nome: `${faker.name.firstName()} ${faker.name.lastName()}`,
             email: faker.internet.email(),
             password: faker.internet.password(),
-            administrador: `${faker.random.boolean()}`,
+            administrador: `${faker.datatype.boolean()}`,
         }
 
         // cadastra usuário

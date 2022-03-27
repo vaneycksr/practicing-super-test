@@ -15,7 +15,7 @@ describe('Validar verbo POST no endpoint ' + rotaUsuarios, () =>{
             nome: `${faker.name.firstName()} ${faker.name.lastName()}`,
             email: faker.internet.email(),
             password: faker.internet.password(),
-            administrador: `${faker.random.boolean()}`,
+            administrador: `${faker.datatype.boolean()}`,
         }).expect(201)
 
         expect(response.body).to.deep.equal(
@@ -43,13 +43,13 @@ describe('Validar verbo POST no endpoint ' + rotaUsuarios, () =>{
         );  
     })
 
-    it.only('Cadastrar usuário com e-mail já utilizado', async () =>{
+    it('Cadastrar usuário com e-mail já utilizado', async () =>{
 
         const user = {
             nome: `${faker.name.firstName()} ${faker.name.lastName()}`,
             email: faker.internet.email(),
             password: faker.internet.password(),
-            administrador: `${faker.random.boolean()}`,
+            administrador: `${faker.datatype.boolean()}`,
         }
 
         // cadastra primeiro usuário
