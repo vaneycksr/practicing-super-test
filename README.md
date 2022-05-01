@@ -39,3 +39,9 @@ Learn more about SuperTest
 ```shell
 	$ npm install @faker-js/faker --save-dev
 ```
+
+### Instalando a biblioteca mochawesome para gerar relatórios html
+
+```shell
+	$ npm install mochawesome
+```
