@@ -1,10 +1,6 @@
 const { expect } = require('chai');
 const chai = require('chai');
 const { faker } = require('@faker-js/faker');
-const supertest = require('supertest');
-
-// caminho padrao
-const request = supertest('http://localhost:3000');
 
 const rotaUsuarios = '/usuarios';
 

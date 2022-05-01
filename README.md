@@ -28,7 +28,7 @@ Learn more about SuperTest
 	$ npm install supertest chai
 ```
 
-### Exeutar os testes
+### Executar os testes
 
 ```shell
 	$ npm test
